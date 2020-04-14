@@ -11,5 +11,8 @@
         public string SeoTitle { set; get; }
         public string SeoAlias { get; set; }
         public string LanguageId { set; get; }
+
+        public Language Language { get; set; }
+        public Product Product { get; set; }
     }
 }
