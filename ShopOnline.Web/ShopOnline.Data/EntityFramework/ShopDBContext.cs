@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopOnline.Data.Configurations;
 using ShopOnline.Data.Entities;
+using ShopOnline.Data.Extensions;
 
 namespace ShopOnline.Data.EntityFramework
 {
@@ -39,6 +40,7 @@ namespace ShopOnline.Data.EntityFramework
             modelBuilder.ApplyConfiguration(new PromotionConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
 
+            modelBuilder.Seed();
             //base.OnModelCreating(modelBuilder);
         }
     }
