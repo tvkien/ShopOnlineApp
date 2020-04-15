@@ -13,6 +13,7 @@ namespace ShopOnline.Data.Configurations
             builder.HasKey(x => x.ID);
             builder.Property(x => x.ID).UseIdentityColumn();
             builder.HasOne(x => x.Product).WithMany(x => x.Carts).HasForeignKey(x => x.ProductID);
+            builder.HasOne(x => x.AppUser).WithMany(x => x.Carts).HasForeignKey(x => x.UserId);
         }
     }
 }

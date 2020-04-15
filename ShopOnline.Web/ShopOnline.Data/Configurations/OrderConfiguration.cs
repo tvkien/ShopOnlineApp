@@ -11,6 +11,7 @@ namespace ShopOnline.Data.Configurations
             builder.ToTable("Orders");
             builder.HasKey(x => x.ID);
             builder.HasMany(x => x.OrderDetails).WithOne(x => x.Order);
+            builder.HasOne(x => x.AppUser).WithMany(x => x.Orders).HasForeignKey(x => x.UserId);
         }
     }
 }
