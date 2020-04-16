@@ -16,6 +16,32 @@ namespace ShopOnline.Application.Catalogs.Products
             this.shopDBContext = shopDBContext;
         }
 
+        public async Task<List<ProductViewModel>> GetAll()
+        {
+            var query = from p in shopDBContext.Products
+                        join pt in shopDBContext.ProductTranslations on p.ID equals pt.ProductId
+                        join pic in shopDBContext.ProductInCategories on p.ID equals pic.ProductID
+                        join c in shopDBContext.Categories on pic.CategoryID equals c.ID                        
+                        select new { p, pt, pic };
+
+            return await query.Select(x => new ProductViewModel()
+            {
+                Id = x.p.ID,
+                Name = x.pt.Name,
+                DateCreated = x.p.DateCreated,
+                Description = x.pt.Description,
+                Details = x.pt.Details,
+                LanguageId = x.pt.LanguageId,
+                OriginalPrice = x.p.OriginalPrice,
+                Price = x.p.Price,
+                SeoAlias = x.pt.SeoAlias,
+                SeoDescription = x.pt.SeoDescription,
+                SeoTitle = x.pt.SeoTitle,
+                Stock = x.p.Stock,
+                ViewCount = x.p.ViewCount
+            }).ToListAsync();
+        }
+
         public async Task<PagedResult<ProductViewModel>> GetAllByCategoryId(GetPublicProductPagingRequest request)
         {
             var query = from p in shopDBContext.Products
