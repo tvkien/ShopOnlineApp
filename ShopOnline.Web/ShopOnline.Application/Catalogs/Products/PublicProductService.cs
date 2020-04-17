@@ -1,4 +1,4 @@
-﻿using ShopOnline.Application.Domains;
+﻿using ShopOnline.Domains;
 using ShopOnline.Data.EntityFramework;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -21,7 +21,6 @@ namespace ShopOnline.Application.Catalogs.Products
             var query = from p in shopDBContext.Products
                         join pt in shopDBContext.ProductTranslations on p.ID equals pt.ProductId
                         join pic in shopDBContext.ProductInCategories on p.ID equals pic.ProductID
-                        join c in shopDBContext.Categories on pic.CategoryID equals c.ID                        
                         select new { p, pt, pic };
 
             return await query.Select(x => new ProductViewModel()

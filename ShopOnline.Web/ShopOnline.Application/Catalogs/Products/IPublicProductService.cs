@@ -1,4 +1,4 @@
-﻿using ShopOnline.Application.Domains;
+﻿using ShopOnline.Domains;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

@@ -1,21 +1,21 @@
-﻿using ShopOnline.Application.Domains;
+﻿using ShopOnline.Domains;
 using System.Threading.Tasks;
 
 namespace ShopOnline.Application.Catalogs.Products
 {
     public interface IManageProductService
     {
-        Task<int> Create(ProductCreateRequest request);
+        Task<int> CreateAsync(ProductCreateRequest request);
 
-        Task<int> Update(ProductUpdateRequest request);
+        Task<bool> UpdateAsync(ProductUpdateRequest request);
 
-        Task<int> Delete(int productId);
+        Task<bool> DeleteAsync(int productId);
 
         //Task<bool> UpdatePrice(int productId, decimal newPrice);
 
         //Task<bool> UpdateStock(int productId, int addedQuantity);
 
-        Task AddViewcount(int productId);
+        //Task AddViewcountAsync(int productId);
 
         //Task<PagedResult<ProductViewModel>> GetAllPaging(GetManageProductPagingRequest request);
 

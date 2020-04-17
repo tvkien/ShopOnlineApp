@@ -23,6 +23,7 @@ namespace ShopOnline.Data.EntityFramework
         public DbSet<Promotion> Promotions { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Language> Languages { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
 
         public ShopDBContext(DbContextOptions options) : base(options)
         {

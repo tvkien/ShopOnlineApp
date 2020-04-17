@@ -1,11 +1,13 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
 
-namespace ShopOnline.Application.Domains
+namespace ShopOnline.BackendApi.Models
 {
-    public class ProductViewModel
+    public class ProductCreateRequest
     {
-        public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
+        [Required]
         public double Price { get; set; }
         public double OriginalPrice { get; set; }
         public int Stock { get; set; }
@@ -14,8 +16,9 @@ namespace ShopOnline.Application.Domains
         public string Details { set; get; }
         public string SeoDescription { set; get; }
         public string SeoTitle { set; get; }
+
+        [Required]
         public string LanguageId { set; get; }
-        public DateTime DateCreated { get; set; }
-        public int ViewCount { get; set; }
+        public IFormFile ThumbnailImage { get; set; }
     }
 }

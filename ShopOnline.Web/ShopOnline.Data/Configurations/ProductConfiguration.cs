@@ -16,6 +16,10 @@ namespace ShopOnline.Data.Configurations
             builder.Property(x => x.Stock).IsRequired().HasDefaultValue(0);
             builder.Property(x => x.ViewCount).IsRequired().HasDefaultValue(0);
             builder.HasMany(x => x.OrderDetails).WithOne(x => x.Product);
+            builder.HasMany(x => x.ProductImages).WithOne(x => x.Product);
+            builder.HasMany(x => x.Carts).WithOne(x => x.Product);
+            builder.HasMany(x => x.ProductTranslations).WithOne(x => x.Product);
+            builder.HasMany(x => x.ProductInCategories).WithOne(x => x.Product);
         }
     }
 }

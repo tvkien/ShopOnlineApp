@@ -1,4 +1,4 @@
-﻿namespace ShopOnline.Application.Domains
+﻿namespace ShopOnline.Domains
 {
     public class PagingRequestBase
     {

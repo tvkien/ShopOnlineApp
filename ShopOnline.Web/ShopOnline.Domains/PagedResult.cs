@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ShopOnline.Application.Domains
+namespace ShopOnline.Domains
 {
     public class PagedResult<T>
     {
