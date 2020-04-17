@@ -4,11 +4,13 @@ using System.Threading.Tasks;
 using ShopOnline.BackendApi.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ShopOnline.BackendApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class ProductsController : ControllerBase
     {
         private readonly IPublicProductService publicProductService;

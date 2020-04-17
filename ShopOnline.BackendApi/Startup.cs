@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
 using ShopOnline.Application.Catalogs.Products;
 using ShopOnline.Application.Commons;
 using ShopOnline.Application.Systems.Users;
+using ShopOnline.BackendApi.Extensions;
 using ShopOnline.Data.Entities;
 using ShopOnline.Data.EntityFramework;
 using ShopOnline.Domains;
@@ -49,14 +49,8 @@ namespace ShopOnline.BackendApi
                     .AddDefaultTokenProviders();
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo 
-                {
-                    Title = "Shop Online Backend API",
-                    Version = "v1" 
-                });
-            });
+            services.AddSwagger();
+            services.AddAuthenticationJwt();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -67,10 +61,9 @@ namespace ShopOnline.BackendApi
             }
 
             app.UseHttpsRedirection();
-
+            app.UseAuthentication();
             app.UseRouting();
-
-            //app.UseAuthorization();
+            app.UseAuthorization();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
