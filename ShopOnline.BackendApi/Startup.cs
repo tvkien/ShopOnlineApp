@@ -1,4 +1,5 @@
 using AutoMapper;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -11,6 +12,7 @@ using ShopOnline.Application.Catalogs.Products;
 using ShopOnline.Application.Commons;
 using ShopOnline.Application.Systems.Users;
 using ShopOnline.BackendApi.Extensions;
+using ShopOnline.BackendApi.FluentValidations;
 using ShopOnline.Data.Entities;
 using ShopOnline.Data.EntityFramework;
 using ShopOnline.Domains;
@@ -27,7 +29,6 @@ namespace ShopOnline.BackendApi
             Configuration = configuration;
             Environment = environment;
         }
-        
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -48,7 +49,8 @@ namespace ShopOnline.BackendApi
                     .AddEntityFrameworkStores<ShopDBContext>()
                     .AddDefaultTokenProviders();
 
-            services.AddControllers();
+            services.AddControllers().AddFluentValidation(
+                fv => fv.RegisterValidatorsFromAssemblyContaining<LoginRequestValidator>());
             services.AddSwagger();
             services.AddAuthenticationJwt();
         }
