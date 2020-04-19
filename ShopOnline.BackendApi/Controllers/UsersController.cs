@@ -21,7 +21,7 @@ namespace ShopOnline.BackendApi.Controllers
 
         [HttpPost("authenticate")]
         [AllowAnonymous]
-        public async Task<IActionResult> AuthenticateAsync([FromForm]LoginRequest request)
+        public async Task<IActionResult> AuthenticateAsync([FromBody]LoginRequest request)
         {
             if (!ModelState.IsValid)
             { 
@@ -41,7 +41,7 @@ namespace ShopOnline.BackendApi.Controllers
 
         [HttpPost("register")]
         [AllowAnonymous]
-        public async Task<IActionResult> RegisterAsync([FromForm]RegisterRequest request)
+        public async Task<IActionResult> RegisterAsync([FromBody]RegisterRequest request)
         {
             if (!ModelState.IsValid)
             {

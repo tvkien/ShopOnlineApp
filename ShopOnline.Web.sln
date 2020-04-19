@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopOnline.Web", "ShopOnline.Web\ShopOnline.Web.csproj", "{92CCC1FC-C64E-45EB-9DCE-373167265022}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopOnline.Data", "ShopOnline.Data\ShopOnline.Data.csproj", "{7A99274A-B610-4FAA-AD7C-FDBD9FA330F7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopOnline.Application", "ShopOnline.Application\ShopOnline.Application.csproj", "{D3F228EC-038B-4C01-A261-8B29B71C640E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopOnline.BackendApi", "ShopOnline.BackendApi\ShopOnline.BackendApi.csproj", "{275CEFC2-29FD-4345-B4D2-2AAA809B54E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopOnline.Domains", "ShopOnline.Domains\ShopOnline.Domains.csproj", "{3260BC24-86C1-42E6-A0BF-6F15FAED417E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopOnline.Domains", "ShopOnline.Domains\ShopOnline.Domains.csproj", "{3260BC24-86C1-42E6-A0BF-6F15FAED417E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopOnline.WebAdmin", "ShopOnline.WebAdmin\ShopOnline.WebAdmin.csproj", "{406F1EB6-9561-4249-9401-4D1BFD7A4C4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{92CCC1FC-C64E-45EB-9DCE-373167265022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92CCC1FC-C64E-45EB-9DCE-373167265022}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92CCC1FC-C64E-45EB-9DCE-373167265022}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92CCC1FC-C64E-45EB-9DCE-373167265022}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7A99274A-B610-4FAA-AD7C-FDBD9FA330F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7A99274A-B610-4FAA-AD7C-FDBD9FA330F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A99274A-B610-4FAA-AD7C-FDBD9FA330F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{3260BC24-86C1-42E6-A0BF-6F15FAED417E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3260BC24-86C1-42E6-A0BF-6F15FAED417E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3260BC24-86C1-42E6-A0BF-6F15FAED417E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{406F1EB6-9561-4249-9401-4D1BFD7A4C4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{406F1EB6-9561-4249-9401-4D1BFD7A4C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{406F1EB6-9561-4249-9401-4D1BFD7A4C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{406F1EB6-9561-4249-9401-4D1BFD7A4C4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
